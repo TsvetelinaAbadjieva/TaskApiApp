@@ -94,7 +94,7 @@ router.post('/register', validateRequest(registerSchema), async (req, res, next)
             address: {
                 country: req.body.address.country,
                 city: req.body.address.city,
-                zip: req.body.address.zip,
+                phone: req.body.address.phone,
                 street: req.body.address.street
             },
             email: req.body.email,

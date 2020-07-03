@@ -36,6 +36,10 @@ const userSchema = mongoose.Schema({
         street: {
             type: String,
             trim: true
+        },
+        phone: {
+            type: String,
+            trim: true
         }
     },
     email: {
@@ -47,9 +51,9 @@ const userSchema = mongoose.Schema({
     },
     password: {
         type: String,
-        required: true,
-        min: 6,
-        max: 1024
+        // required: true,
+        // min: 6,
+        // max: 1024
     },
     position: {
         type: Schema.Types.ObjectId,

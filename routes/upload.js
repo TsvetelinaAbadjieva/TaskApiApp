@@ -2,27 +2,27 @@ const router = require('express').Router();
 const path = require('path');
 // const fs = require('fs');
 // const {IncomingForm} = require('formidable').IncomingForm;
-const formidable = require('formidable');
+// const formidable = require('formidable');
 
-uploadWithFormidable = (req, res, next) => {
-    const form = formidable({
-        multiples: true,
-        uploadDir: path.join(__dirname, '../public/uploads')
-    });
+// uploadWithFormidable = (req, res, next) => {
+//     const form = formidable({
+//         multiples: true,
+//         uploadDir: path.join(__dirname, '../public/uploads')
+//     });
 
-    form.parse(req, (err, fields, files) => {
-        if (err) {
-            next(err);
-            return;
-        }
-        console.log(files)
-        res.json({
-            originalname: files.name,
-            path: files.path
-        });
-        next(req)
-    });
-}
+//     form.parse(req, (err, fields, files) => {
+//         if (err) {
+//             next(err);
+//             return;
+//         }
+//         console.log(files)
+//         res.json({
+//             originalname: files.name,
+//             path: files.path
+//         });
+//         next(req)
+//     });
+// }
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

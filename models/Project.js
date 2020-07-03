@@ -9,12 +9,12 @@ const ProjectSchema = mongoose.Schema({
         max: 255
     },
     description: {
-        type: Text,
+        type: String,
         required: true,
     },
     documents: [{
         file: {
-            type: ArrayBuffer
+            type: String
         }
     }],
     start_date: {
@@ -32,3 +32,4 @@ const ProjectSchema = mongoose.Schema({
         ref: 'User'
     }]
 })
+module.exports = mongoose.model('Project', ProjectSchema);

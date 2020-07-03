@@ -16,7 +16,8 @@ const fileRouter = require('./routes/upload');
 const departmentRouter = require('./routes/department');
 const positionRouter = require('./routes/position');
 const cityRouter = require('./routes/city');
-const countryRouter = require('./routes/country')
+const countryRouter = require('./routes/country');
+const projectRouter = require('./routes/project');
 
 
 
@@ -60,6 +61,7 @@ app.use('/api/department', departmentRouter);
 app.use('/api/position', positionRouter);
 app.use('/api/address/city', cityRouter);
 app.use('/api/address/country', countryRouter);
+app.use('/api/project',projectRouter);
 
 const server = http.createServer(app);
 app.listen(PORT, () => {
